@@ -1,0 +1,58 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Dithering.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Resources>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <controls:Pivot Grid.Row="0" x:Name="Pivot">
+            <controls:PivotItem Header="circles">
+                <Image Stretch="None" Width="480" Height="480" Margin="-12" x:Name="CirclesImage"/>
+            </controls:PivotItem>
+            <controls:PivotItem Header="rainbow">
+                <Image Stretch="None" Width="480" Height="480" Margin="-12" x:Name="RainbowImage"/>
+            </controls:PivotItem>
+            <controls:PivotItem Header="face">
+                <Image Stretch="None" Width="480" Height="480" Margin="-12" x:Name="FaceImage"/>
+            </controls:PivotItem>
+        </controls:Pivot>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="OriginalButton" Click="OriginalButton_Click">
+                    <TextBlock>Original</TextBlock>
+                </Button>
+                <Button x:Name="SierraLiteButton" Click="SierraLiteButton_Click">
+                    <TextBlock>Sierra-2-4A</TextBlock>
+                </Button>
+                <Button x:Name="SierraButton" Click="SierraButton_Click">
+                    <TextBlock>Sierra2</TextBlock>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="FloydButton" Click="FloydButton_Click">
+                    <TextBlock>Floyd-Steinberg</TextBlock>
+                </Button>
+                <Button x:Name="StuckiButton" Click="StuckiButton_Click">
+                    <TextBlock>Stucki</TextBlock>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>
